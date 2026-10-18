@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q1 2027 · Ecommerce Colombia</title>
+<meta name="description" content="Qué es el primer trimestre de 2027 y por qué importa para las ventas de ecommerce en Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fffaf3;
+    --surface: #fff3e4;
+    --ink: #3a2a22;
+    --muted: #8a7468;
+    --line: #f0dfcb;
+    --coral: #ee6c4d;
+    --amber: #f4a259;
+    --mint: #7bc9a6;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.65 "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; }
+  h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-bottom: 14px; }
+  p { color: var(--muted); }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--coral);
+  }
+  .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--coral); border-radius: 2px; }
+
+  /* Hero */
+  header { padding: 96px 0 64px; position: relative; overflow: hidden; }
+  header::after {
+    content: ""; position: absolute; z-index: -1; right: -120px; top: -120px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--amber), var(--coral) 70%);
+    opacity: .22; filter: blur(8px);
+  }
+  header h1 { margin: 18px 0 20px; }
+  header h1 em { font-style: normal; color: var(--coral); }
+  .lede { font-size: 1.2rem; max-width: 600px; }
+  .count {
+    margin-top: 36px; display: inline-flex; align-items: baseline; gap: 10px;
+    padding: 12px 20px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+    font-size: .95rem; color: var(--muted);
+  }
+  .count b { font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--coral); font-weight: 600; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section > .wrap > p { max-width: 620px; }
+
+  /* Months */
+  .months { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .month { background: var(--surface); border-radius: var(--radius); padding: 24px; border: 1px solid var(--line); }
+  .month small { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+  .month:nth-child(1) small { color: var(--amber); }
+  .month:nth-child(2) small { color: var(--coral); }
+  .month:nth-child(3) small { color: var(--mint); }
+  .month h3 { font-family: "Fraunces", serif; font-size: 1.45rem; font-weight: 600; margin: 6px 0 10px; }
+  .month p { font-size: .95rem; line-height: 1.55; }
+
+  /* Reasons */
+  .reasons { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 4px; counter-reset: r; }
+  .reasons li {
+    counter-increment: r; display: grid; grid-template-columns: 48px 1fr; gap: 8px 16px;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .reasons li::before {
+    content: counter(r, decimal-leading-zero);
+    font-family: "Fraunces", serif; font-size: 1.5rem; color: var(--amber); grid-row: span 2;
+  }
+  .reasons h3 { font-size: 1.08rem; font-weight: 600; }
+  .reasons p { font-size: .97rem; }
+
+  /* Calendar */
+  .cal { margin-top: 28px; display: grid; gap: 10px; }
+  .row {
+    display: grid; grid-template-columns: 110px 1fr auto; gap: 16px; align-items: center;
+    padding: 14px 18px; border-radius: 14px; background: var(--surface);
+  }
+  .row .d { font-weight: 600; color: var(--coral); font-size: .95rem; }
+  .row .t { font-size: .97rem; }
+  .tag { font-size: .72rem; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+  .tag.fest { background: #ffe7dd; border-color: #ffd2c0; color: var(--coral); }
+
+  /* Actions */
+  .actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+  .card { padding: 24px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+  .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .card h3::before { content: "→ "; color: var(--coral); }
+  .card p { font-size: .95rem; }
+
+  footer { padding: 40px 0 72px; border-top: 1px solid var(--line); font-size: .85rem; color: var(--muted); }
+  footer p { max-width: 640px; }
+
+  @media (max-width: 680px) {
+    header { padding: 64px 0 40px; }
+    .months, .actions { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr auto; }
+    .row .d { grid-column: 1 / -1; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Colombia · Ecommerce</span>
+    <h1>Q1 <em>2027</em></h1>
+    <p class="lede">El primer trimestre del año: enero, febrero y marzo. El tramo más silencioso del calendario comercial, y por eso, el más fácil de ganar si llegas preparado.</p>
+    <div class="count"><b id="days">—</b><span id="days-label">días para el 1 de enero de 2027</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">En qué se basa</span>
+    <h2>Tres meses, tres ritmos</h2>
+    <p>Q1 corresponde al periodo del 1 de enero al 31 de marzo de 2027. Es el arranque del año fiscal y de las metas anuales, y se mueve entre la resaca de diciembre y la preparación de las grandes campañas del año.</p>
+    <div class="months">
+      <article class="month">
+        <small>Enero</small>
+        <h3>Reinicio</h3>
+        <p>La famosa «cuesta de enero»: el gasto se enfría tras las primas, pero llegan el ajuste del salario mínimo y el regreso a clases.</p>
+      </article>
+      <article class="month">
+        <small>Febrero</small>
+        <h3>Escolar y cesantías</h3>
+        <p>Calendario A en pleno arranque. Las cesantías se consignan al fondo, y muchas familias las usan en educación.</p>
+      </article>
+      <article class="month">
+        <small>Marzo</small>
+        <h3>Fechas y festivos</h3>
+        <p>Día de la Mujer, Día del Hombre y Semana Santa concentran puentes festivos y compras de ocio y viaje.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Por qué importa</span>
+    <h2>Lo que Q1 le puede dar a tu tienda</h2>
+    <ul class="reasons">
+      <li>
+        <h3>Publicidad más barata</h3>
+        <p>Tras el pico de Black Friday y Navidad, la competencia por subasta baja. Es una ventana típica para probar creatividades, audiencias y ofertas a menor costo.</p>
+      </li>
+      <li>
+        <h3>Demanda escolar con fecha fija</h3>
+        <p>Útiles, uniformes, tecnología y mochilas se compran en un plazo muy concreto. Quien tiene inventario y logística lista, vende.</p>
+      </li>
+      <li>
+        <h3>Puentes que disparan el ocio</h3>
+        <p>Con cuatro fines de semana largos, crece el consumo de viajes, experiencias, hogar y entretenimiento digital.</p>
+      </li>
+      <li>
+        <h3>Fidelizar a los compradores de diciembre</h3>
+        <p>Es el momento de convertir clientes nuevos en recurrentes con email, WhatsApp y suscripciones, antes de que olviden tu marca.</p>
+      </li>
+      <li>
+        <h3>Ensayo general de las campañas del año</h3>
+        <p>Lo que mides ahora (conversión, tiempos de entrega, devoluciones) define cómo llegas al Hot Sale y a las campañas de mitad de año.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Calendario</span>
+    <h2>Fechas clave</h2>
+    <p>Festivos según la Ley Emiliani; las fechas de trabajo (cesantías, calendario escolar) pueden variar por empleador o colegio.</p>
+    <div class="cal">
+      <div class="row"><span class="d">1 ene</span><span class="t">Año Nuevo · fin de semana largo 1–3 ene</span><span class="tag fest">Festivo</span></div>
+      <div class="row"><span class="d">11 ene</span><span class="t">Reyes Magos · puente 9–11 ene</span><span class="tag fest">Festivo</span></div>
+      <div class="row"><span class="d">31 ene</span><span class="t">Plazo para pagar intereses de cesantías a trabajadores</span><span class="tag">Liquidez</span></div>
+      <div class="row"><span class="d">Ene – feb</span><span class="t">Regreso a clases, calendario A</span><span class="tag">Escolar</span></div>
+      <div class="row"><span class="d">14 feb</span><span class="t">San Valentín · plazo para consignar cesantías al fondo</span><span class="tag">Regalos</span></div>
+      <div class="row"><span class="d">8 mar</span><span class="t">Día Internacional de la Mujer</span><span class="tag">Campaña</span></div>
+      <div class="row"><span class="d">19 mar</span><span class="t">Día del Hombre · San José, festivo el lunes 22 mar</span><span class="tag fest">Festivo</span></div>
+      <div class="row"><span class="d">25 – 28 mar</span><span class="t">Semana Santa · Jueves y Viernes Santo, Domingo de Resurrección el 28</span><span class="tag fest">Festivo</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Qué hacer</span>
+    <h2>Cuatro movimientos simples</h2>
+    <div class="actions">
+      <div class="card"><h3>Prepara inventario en noviembre</h3><p>Asegura stock escolar y de temporada antes de que suban los tiempos de envío.</p></div>
+      <div class="card"><h3>Segmenta a tus compradores de diciembre</h3><p>Crea flujos de bienvenida, recompra y reactivación para enero.</p></div>
+      <div class="card"><h3>Ofrece cuotas y contraentrega</h3><p>En enero el bolsillo es sensible: facilita el pago y baja la fricción.</p></div>
+      <div class="card"><h3>Planea contenido por festivo</h3><p>Una pieza por cada puente, con promoción corta y envío claro antes del feriado.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Resumen orientativo basado en el calendario laboral, escolar y de festivos de Colombia. Valida cifras de mercado propias (CCCE, Google Analytics, tu plataforma) antes de fijar metas.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var target = new Date(2027, 0, 1);
+    var now = new Date();
+    var d = Math.ceil((target - now) / 86400000);
+    var n = document.getElementById("days");
+    var l = document.getElementById("days-label");
+    if (d > 0) { n.textContent = d; }
+    else { n.textContent = "✓"; l.textContent = "Q1 2027 ya está en marcha"; }
+  })();
+</script>
+</body>
+</html>
